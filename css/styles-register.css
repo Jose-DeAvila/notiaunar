@@ -1,0 +1,38 @@
+.title1 {
+    margin-top: 30px;
+    margin-bottom: 4rem;
+}
+
+.nombreCompleto, .programa, .correo, .password {
+    margin-bottom: 20px;
+}
+
+.botones {
+    clear: both;
+}
+
+.botones .registrarse {
+    float: left;
+}
+
+.botones .back {
+    float: right;
+}
+
+.select {
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+}
+
+/**********************/
+/*    MEDIA QUERYS    */
+/**********************/
+
+@media (max-width:414px){
+    .botones .registrarse, .botones .back {
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
