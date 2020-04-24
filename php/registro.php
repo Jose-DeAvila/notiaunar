@@ -1,16 +1,12 @@
 <?php 
-    error_reporting(0);
 	include "conexion.php";   
     $nombre = $_POST['nombre'];
     $programa = $_POST['programa'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $base = new PDO("mysql:host=localhost;dbname=notiaunar", "root","26930470");
-	$base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sql = "SELECT * FROM usuarios where email=:singin";
-	$ejecutar = $base->prepare($sql);
-    $ejecutar->execute(array(":singin"=>$email));
-    $registro=$ejecutar->fetch(PDO::FETCH_ASSOC);
+	$sql = "SELECT * FROM usuarios where email='$email'";
+	$eje = $con->query($sql);
+    $registro = $eje->fetch_assoc();
     $control = 0;
     if ($email==$registro['email']){
         $control--;
